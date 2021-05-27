@@ -91,7 +91,7 @@ You should implement the following functionality in your website. Check the lect
 **As a user, I should be able to...**
 
 1. view a list of all reviews
-2. view a page for each topic with a list of related reviews.
+2. view a page for each category with a list of related reviews.
 3. view an individual review.
 4. view an individual review's comments.
 5. vote on an review and immediately see the change.
