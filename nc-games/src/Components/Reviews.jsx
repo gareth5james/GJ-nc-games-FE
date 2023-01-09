@@ -27,7 +27,7 @@ function Reviews() {
                             <p>{review.review_body}</p>
                             <p>By: {review.owner}</p>
                         </div>
-                        <Link to={`/${review.review_id}`}>See More</Link>
+                        <Link to={`/reviews/${review.review_id}`}>See More</Link>
                     </li>
                 })}
             </ul> }

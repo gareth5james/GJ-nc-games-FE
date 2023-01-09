@@ -12,7 +12,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Reviews />} />
-        <Route path="/:reviewId" element={<SingleReview />} />
+        <Route path="/reviews/:reviewId" element={<SingleReview />} />
       </Routes>
     </div>
   );
