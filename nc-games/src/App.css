@@ -1,5 +1,8 @@
-.App {
+body {
   background-color: #6B9FC8;
+}
+
+.App {
   text-align: center;
 }
 
@@ -52,12 +55,12 @@ nav {
   margin: 10px;
 }
 
-.reviewList-Header {
+.reviewList__Header {
   border: 2px solid #73648E;
   margin: 5px;
 }
 
-.reviewList-Body {
+.reviewList__Body {
   border: 2px solid #73648E;
   margin: 5px;
   overflow:scroll;

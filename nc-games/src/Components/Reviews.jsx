@@ -3,15 +3,18 @@ import { useState, useEffect } from "react"
 
 function Reviews() {
     const [items, setItems] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        getReviews().then(data => {
-            setItems(data)
+        setIsLoading(true)
+        getReviews().then(items => {
+            setItems(items)
+            setIsLoading(false);
         })
     }, [])
 
     return <main>
-            <ul className="reviewList">
+            {isLoading ? <p>Reviews Loading</p> : <ul className="reviewList">
                 {items.map(review => {
                     return <li key={review.review_id}>
                         <div className="reviewList-Header">
@@ -23,8 +26,20 @@ function Reviews() {
                             <p>{review.review_body}</p>
                             <p>By: {review.owner}</p>
                         </div>
-                        <div>
-
+                    </li>
+                })}
+            </ul> }
+            <ul className="reviewList">
+                {items.map(review => {
+                    return <li key={review.review_id}>
+                        <div className="reviewList__Header">
+                            <p>Title: {review.title}</p>
+                            <p>Category: {review.category}</p>
+                            <p>Designer: {review.designer}</p>
+                        </div>
+                        <div className="reviewList__Body">
+                            <p>{review.review_body}</p>
+                            <p>By: {review.owner}</p>
                         </div>
                     </li>
                 })}
