@@ -58,11 +58,12 @@ nav {
 .reviewList__Header {
   border: 2px solid #73648E;
   margin: 5px;
+  height: auto;
 }
 
 .reviewList__Body {
   border: 2px solid #73648E;
   margin: 5px;
   overflow:scroll;
-  height: 10vh;
+  height: 12vh;
 }

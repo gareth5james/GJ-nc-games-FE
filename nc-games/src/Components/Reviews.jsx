@@ -14,22 +14,7 @@ function Reviews() {
     }, [])
 
     return <main>
-            {isLoading ? <p>Reviews Loading</p> : <ul className="reviewList">
-                {items.map(review => {
-                    return <li key={review.review_id}>
-                        <div className="reviewList-Header">
-                            <p>Title: {review.title}</p>
-                            <p>Category: {review.category}</p>
-                            <p>Designer: {review.designer}</p>
-                        </div>
-                        <div className="reviewList-Body">
-                            <p>{review.review_body}</p>
-                            <p>By: {review.owner}</p>
-                        </div>
-                    </li>
-                })}
-            </ul> }
-            <ul className="reviewList">
+            {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
                 {items.map(review => {
                     return <li key={review.review_id}>
                         <div className="reviewList__Header">
@@ -43,7 +28,8 @@ function Reviews() {
                         </div>
                     </li>
                 })}
-            </ul>
+            </ul> }
+           
     </main>
 }
 
