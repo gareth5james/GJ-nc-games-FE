@@ -1,6 +1,6 @@
 function Nav() {
     return <nav>
-        <p>Links will go here</p>
+        Links will go here
     </nav>
 }
 

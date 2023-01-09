@@ -1,5 +1,5 @@
 function Header () {
-    return <header>
+    return <header className="App-header">
         <h1>House of Games</h1>
     </header>
 }
