@@ -1,5 +1,6 @@
 import {getReviews} from "../api"
 import { useState, useEffect } from "react"
+import {Link} from "react-router-dom"
 
 function Reviews() {
     const [items, setItems] = useState([])
@@ -26,6 +27,7 @@ function Reviews() {
                             <p>{review.review_body}</p>
                             <p>By: {review.owner}</p>
                         </div>
+                        <Link to={`/${review.review_id}`}>See More</Link>
                     </li>
                 })}
             </ul> }

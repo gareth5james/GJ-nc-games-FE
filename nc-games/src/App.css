@@ -44,6 +44,27 @@ nav {
   line-height: 5vh;
 }
 
+.review {
+  background-color: #FBF9F9;
+  border: 3px solid #73648E;
+  margin: 10px;
+}
+
+.review img {
+  width: 100%;
+}
+
+.comments {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.comments li {
+  background-color: #FBF9F9;
+  border: 3px solid #73648E;
+  margin: 10px;
+}
+
 .reviewList {
   list-style-type: none;
   padding-left: 0;
