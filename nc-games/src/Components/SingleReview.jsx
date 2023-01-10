@@ -32,11 +32,9 @@ function SingleReview() {
                 <p>Category: {review.category}</p>
                 <p>Designer: {review.designer}</p>
                 <p>Written: {reviewDate}</p>
-            </div>
-            <div className="review__Body">
                 <img src={review.review_img_url} alt={review.title}/>
                 <p>{review.review_body}</p>
-            <ReviewVotes review={review}/>
+                <ReviewVotes review={review}/>
                 <p>Comments: {review.comment_count}</p>
                 <ReviewComments reviewId={reviewId}/>
             <Link to="/">Back to Reviews</Link>
