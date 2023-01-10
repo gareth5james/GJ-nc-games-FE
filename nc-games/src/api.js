@@ -12,7 +12,7 @@ export const getSingleReview = (reviewId) => {
     .then((response) => response.data.review);
 };
 
-export const getComments = ({ reviewId }) => {
+export const getComments = (reviewId) => {
   return api
     .get(`/reviews/${reviewId}/comments`)
     .then((response) => response.data.comments);
@@ -22,4 +22,13 @@ export const patchReviewVotes = (reviewId, incVotes) => {
   return api
     .patch(`/reviews/${reviewId}`, incVotes)
     .then((response) => response.data.review.votes);
+};
+
+export const postComment = (reviewId, newComment) => {
+  return api
+    .post(`/reviews/${reviewId}/comments`, {
+      username: "grumpy19",
+      body: newComment,
+    })
+    .then((response) => response.data.comment);
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { getComments } from "../api"
 
-function ReviewComments(reviewId) {
+function ReviewComments({reviewId, hasPostedComment}) {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
@@ -11,7 +11,7 @@ function ReviewComments(reviewId) {
             setComments(comments)
             setIsLoading(false)
         })
-    }, [reviewId])
+    }, [reviewId, hasPostedComment])
 
     return <ul className="comments">
         {isLoading ? <p>Comments Loading</p> : comments.map(comment => {
