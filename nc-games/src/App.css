@@ -93,6 +93,11 @@ button {
 .reviewList__Body {
   border: 2px solid #73648E;
   margin: 5px;
-  overflow:scroll;
   height: 12vh;
+}
+
+.reviewList__Body p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
