@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import { getSingleReview } from "../api"
 import {Link, useParams} from "react-router-dom"
-import ReviewComments from "./ReviewComments"
+import ReviewComments from "./ReviewComments";
 
 
 function SingleReview() {
@@ -9,6 +9,7 @@ function SingleReview() {
 
     const [review, setReview] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+    const [reviewDate, setReviewDate] = useState("")
 
     useEffect(() => {
         setIsLoading(true)
@@ -18,12 +19,18 @@ function SingleReview() {
         })
     },[reviewId])
 
+    useEffect(() => {
+        let newDate = new Date(review.created_at).toDateString();
+        setReviewDate(newDate);
+    }, [review.created_at])
+
     return <main>
         {isLoading ? <p>Review Loading</p> : <div className="review">
             <div className="review__Header">
                 <h2>{review.title}</h2>
                 <p>Category: {review.category}</p>
                 <p>Designer: {review.designer}</p>
+                <p>Written: {reviewDate}</p>
             </div>
             <div className="review__Body">
                 <img src={review.review_img_url} alt={review.title}/>
