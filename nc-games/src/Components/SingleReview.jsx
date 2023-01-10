@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import { getSingleReview } from "../api"
+import { getSingleReview, patchReviewVotes } from "../api"
 import {Link, useParams} from "react-router-dom"
 import ReviewComments from "./ReviewComments"
 
@@ -9,6 +9,8 @@ function SingleReview() {
 
     const [review, setReview] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+    const [votes, setVotes] = useState(0)
+    const [isVoteError, setIsVoteError] = useState(false)
 
     useEffect(() => {
         setIsLoading(true)
@@ -17,6 +19,19 @@ function SingleReview() {
             setIsLoading(false)
         })
     },[reviewId])
+
+    useEffect(() => {
+        setVotes(review.votes)
+    },[review.votes])
+
+    function incVotes(inc) {
+        setIsVoteError(false);
+        setVotes((currentVotes) => currentVotes + inc);
+        patchReviewVotes(reviewId, {inc_votes: inc}).catch(e => {
+            setVotes(review.votes)
+            setIsVoteError(true)
+        });
+    }
 
     return <main>
         {isLoading ? <p>Review Loading</p> : <div className="review">
@@ -30,8 +45,9 @@ function SingleReview() {
                 <p>{review.review_body}</p>
             </div>
             <div className="review__Votes">
-                <p>Votes: {review.votes}</p>
-                <button>👍</button><button>👎</button>
+                {isVoteError ? <p className="errorMessage">Error updating votes</p> : null}
+                <p>Votes: {votes}</p>
+                <button onClick={() => {incVotes(1)}}>👍</button><button onClick={() => {incVotes(-1)}}>👎</button>
             </div>
             <div className="review__Comments">
                 <p>Comments: {review.comment_count}</p>
