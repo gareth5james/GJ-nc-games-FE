@@ -42,6 +42,13 @@ nav {
   margin-bottom: 0;
   height: 5vh;
   line-height: 5vh;
+  font-size: 1.2em;
+}
+
+nav .Link {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
 }
 
 .review {
