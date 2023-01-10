@@ -65,6 +65,14 @@ nav {
   margin: 10px;
 }
 
+button {
+  background-color: #6B9FC8;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
 .reviewList {
   list-style-type: none;
   padding-left: 0;
@@ -85,6 +93,11 @@ nav {
 .reviewList__Body {
   border: 2px solid #73648E;
   margin: 5px;
-  overflow:scroll;
   height: 12vh;
+}
+
+.reviewList__Body p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
