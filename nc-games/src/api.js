@@ -24,10 +24,10 @@ export const patchReviewVotes = (reviewId, incVotes) => {
     .then((response) => response.data.review.votes);
 };
 
-export const postComment = (reviewId, newComment) => {
+export const postComment = (user, reviewId, newComment) => {
   return api
     .post(`/reviews/${reviewId}/comments`, {
-      username: "grumpy19",
+      username: user,
       body: newComment,
     })
     .then((response) => response.data.comment);

@@ -11,12 +11,6 @@ body {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #1C2235;
   display: flex;
@@ -104,4 +98,16 @@ button {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.newComment button{
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.newComment__Field {
+  resize: none;
+  height: 12vh;
+  width: 75%;
+  margin-bottom: -2px;
 }

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react"
 import { getComments } from "../api"
 
-function ReviewComments({reviewId, hasPostedComment}) {
-    const [comments, setComments] = useState([])
+function ReviewComments({reviewId, hasPostedComment, comments, setComments}) {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
