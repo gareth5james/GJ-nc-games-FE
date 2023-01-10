@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react"
-import { getComments, patchReviewVotes } from "../api"
+import { getComments } from "../api"
 
 function ReviewComments(reviewId) {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [votes, setVotes] = useState(0)
 
     useEffect(() => {
         setIsLoading(true)
@@ -14,21 +13,13 @@ function ReviewComments(reviewId) {
         })
     }, [reviewId])
 
-    useEffect(() => {
-        setVotes(review.votes)
-    })
-
-    function incVotes(inc) {
-        patchReviewVotes(reviewId, {inc_votes: inc})
-    }
-
     return <ul className="comments">
         {isLoading ? <p>Comments Loading</p> : comments.map(comment => {
             return <li key={comment.comment_id}>
                 <p>{comment.body}</p>
                 <p>By: {comment.author}</p>
                 <p>Votes: {comment.votes}</p>
-                <button onClick={() => {incVotes(1)}}>👍</button><button onClick={() => {incVotes(-1)}}>👎</button>
+                <button>👍</button><button>👎</button>
             </li>
         })}
     </ul>
