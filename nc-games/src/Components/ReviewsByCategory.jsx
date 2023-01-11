@@ -5,16 +5,16 @@ import { getReviewsByCategory } from "../api"
 function ReviewsByCategory() {
     const [items, setItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const {category} = useParams()
+    const {categoryId} = useParams()
 
     useEffect(() => {
-        console.log(category)
+        console.log(categoryId)
         setIsLoading(true)
-        getReviewsByCategory(category).then(items => {
+        getReviewsByCategory(categoryId).then(items => {
             setItems(items)
             setIsLoading(false);
         })
-    }, [category])
+    }, [categoryId])
 
     return <main>
             {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
