@@ -5,16 +5,15 @@ import { getReviewsByCategory } from "../api"
 function ReviewsByCategory() {
     const [items, setItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const {categoryId} = useParams()
+    const {category} = useParams()
 
     useEffect(() => {
-        console.log(categoryId)
         setIsLoading(true)
-        getReviewsByCategory(categoryId).then(items => {
+        getReviewsByCategory(category).then(items => {
             setItems(items)
             setIsLoading(false);
         })
-    }, [categoryId])
+    }, [category])
 
     return <main>
             {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
@@ -22,7 +21,7 @@ function ReviewsByCategory() {
                     return <li key={review.review_id}>
                         <div className="reviewList__Header">
                             <p>Title: {review.title}</p>
-                            <p>Category: {review.category}</p>
+                            <p>Category: {review.category.replaceAll("-", " ")}</p>
                             <p>Designer: {review.designer}</p>
                         </div>
                         <div className="reviewList__Body">

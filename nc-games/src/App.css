@@ -99,6 +99,7 @@ button {
   border: 2px solid #73648E;
   margin: 5px;
   height: auto;
+  text-transform: capitalize;
 }
 
 .reviewList__Body {
