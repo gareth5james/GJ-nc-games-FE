@@ -32,12 +32,12 @@ body {
 
 nav {
   padding-top: 0;
+  padding-bottom: 0;
   background-color: #73648E;
   margin-top:0;
   margin-bottom: 0;
-  min-height: 3vh;
-  line-height: 3vh;
-  font-size: 1.2em;
+  min-height: 5vh;
+  line-height: 5vh;
 }
 
 .Link {
@@ -72,6 +72,15 @@ nav .Link {
 .comments {
   list-style-type: none;
   padding-left: 0;
+}
+
+#sort_by {
+  margin-top: 10px;
+}
+
+#order_by {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .comments li {

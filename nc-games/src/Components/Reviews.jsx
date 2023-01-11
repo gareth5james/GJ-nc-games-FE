@@ -1,21 +1,22 @@
 import {getReviews} from "../api"
 import { useState, useEffect } from "react"
+import SortBy from "../Components/SortBy"
 import {Link} from "react-router-dom"
 
-function Reviews() {
+function Reviews({sortBy, setSortBy, orderBy, setOrderBy}) {
     const [items, setItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-  
 
     useEffect(() => {
         setIsLoading(true)
-        getReviews().then(items => {
+        getReviews(sortBy, orderBy).then(items => {
             setItems(items)
             setIsLoading(false);
         })
-    }, [])
+    }, [sortBy, orderBy])
 
     return <main>
+            <SortBy className="sort" sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/>
             {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
                 {items.map(review => {
                     return <li key={review.review_id}>

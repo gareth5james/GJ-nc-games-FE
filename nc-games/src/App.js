@@ -11,6 +11,8 @@ import { useState } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [sortBy, setSortBy] = useState(undefined);
+  const [orderBy, setOrderBy] = useState("asc");
 
   return (
     <div className="App">
@@ -18,8 +20,28 @@ function App() {
       <Nav />
       <Login user={user} setUser={setUser} />
       <Routes>
-        <Route path="/" element={<Reviews />} />
-        <Route path="/categories/:category" element={<ReviewsByCategory />} />
+        <Route
+          path="/"
+          element={
+            <Reviews
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              orderBy={orderBy}
+              setOrderBy={setOrderBy}
+            />
+          }
+        />
+        <Route
+          path="/categories/:category"
+          element={
+            <ReviewsByCategory
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              orderBy={orderBy}
+              setOrderBy={setOrderBy}
+            />
+          }
+        />
         <Route
           path="/reviews/:reviewId"
           element={<SingleReview user={user} setUser={setUser} />}

@@ -2,9 +2,9 @@ import axios from "axios";
 
 const api = axios.create({ baseURL: "https://nc-games.onrender.com/api" });
 
-export const getReviews = (category) => {
+export const getReviews = (sort_by, order, category) => {
   return api
-    .get("/reviews", { params: { category } })
+    .get("/reviews", { params: { category, sort_by, order } })
     .then((response) => response.data.reviews);
 };
 
