@@ -16,7 +16,6 @@ function NewComment({reviewId, hasPostedComment, setHasPostedComment, setNumComm
         setHasPostedComment(false);
         setHasPostedError(false);
         setIsPostingError(false);
-        console.log(user)
         if(!hasPosted && newComment.length !== 0 && user !== null) {
             setComments(curr => [newComment, ...curr])
             setNumComments((curr) => curr + 1)
