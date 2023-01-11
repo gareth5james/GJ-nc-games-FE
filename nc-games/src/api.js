@@ -14,7 +14,7 @@ export const getSingleReview = (reviewId) => {
     .then((response) => response.data.review);
 };
 
-export const getComments = ({ reviewId }) => {
+export const getComments = (reviewId) => {
   return api
     .get(`/reviews/${reviewId}/comments`)
     .then((response) => response.data.comments);
@@ -28,4 +28,11 @@ export const patchReviewVotes = (reviewId, incVotes) => {
 
 export const getCategories = () => {
   return api.get(`/categories`).then((response) => response.data.categories);
+export const postComment = (user, reviewId, newComment) => {
+  return api
+    .post(`/reviews/${reviewId}/comments`, {
+      username: user,
+      body: newComment,
+    })
+    .then((response) => response.data.comment);
 };
