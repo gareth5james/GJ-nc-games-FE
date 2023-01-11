@@ -5,7 +5,7 @@ import ReviewComments from "./ReviewComments"
 import ReviewVotes from "./ReviewVotes"
 import NewComment from "./NewComment"
 
-function SingleReview() {
+function SingleReview({user}) {
     const {reviewId} = useParams();
 
     const [review, setReview] = useState({})
@@ -41,9 +41,9 @@ function SingleReview() {
                 <img src={review.review_img_url} alt={review.title}/>
                 <p>{review.review_body}</p>
                 <ReviewVotes review={review}/>
+                <NewComment reviewId={reviewId} hasPostedComment={hasPostedComment} setHasPostedComment={setHasPostedComment} setNumComments={setNumComments} setComments={setComments} user={user}/>
                 <p>Comments: {numComments}</p>
                 <ReviewComments reviewId={reviewId} hasPostedComment={hasPostedComment} setComments={setComments} comments={comments}/>
-                <NewComment reviewId={reviewId} hasPostedComment={hasPostedComment} setHasPostedComment={setHasPostedComment} setNumComments={setNumComments} setComments={setComments}/>
             <Link to="/">Back to Reviews</Link>
             </div>}
     </main>

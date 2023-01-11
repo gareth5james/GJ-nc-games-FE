@@ -26,6 +26,7 @@ body {
   main {
     width: 800px;
     margin: auto;
+    min-height: 200vh;
   }
 }
 
@@ -52,6 +53,10 @@ nav {
   color: red
 }
 
+.successMessage {
+  color: green
+}
+
 .comments {
   list-style-type: none;
   padding-left: 0;
@@ -69,6 +74,13 @@ button {
   margin-right: 2px;
   margin-bottom: 5px;
   font-size: 1.2em;
+}
+
+.login {
+  float: right;
+  margin-right: 20px;
+  margin-top: 5px;
+  background-color: #FBF9F9;
 }
 
 .reviewList {
@@ -91,7 +103,6 @@ button {
 .reviewList__Body {
   border: 2px solid #73648E;
   margin: 5px;
-  height: 15vh;
 }
 
 .reviewList__Body p {
