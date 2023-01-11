@@ -35,8 +35,20 @@ nav {
   background-color: #73648E;
   margin-top:0;
   margin-bottom: 0;
-  height: 5vh;
-  line-height: 5vh;
+  min-height: 3vh;
+  line-height: 3vh;
+  font-size: 1.2em;
+}
+
+.Link {
+  color: #1C2235
+}
+
+nav .Link {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+  color: #1C2235;
 }
 
 .review {
@@ -98,6 +110,10 @@ button {
   border: 2px solid #73648E;
   margin: 5px;
   height: auto;
+}
+
+.reviewList__Header__Category {
+  text-transform: capitalize;
 }
 
 .reviewList__Body {
