@@ -28,6 +28,8 @@ export const patchReviewVotes = (reviewId, incVotes) => {
 
 export const getCategories = () => {
   return api.get(`/categories`).then((response) => response.data.categories);
+};
+
 export const postComment = (user, reviewId, newComment) => {
   return api
     .post(`/reviews/${reviewId}/comments`, {

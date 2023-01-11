@@ -7,7 +7,7 @@ import ReviewsByCategory from "./Components/ReviewsByCategory";
 import Login from "./Components/Login";
 
 import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -20,7 +20,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Reviews />} />
         <Route path="/categories/:category" element={<ReviewsByCategory />} />
-        <Route path="/reviews/:reviewId" element={<SingleReview user={user} setUser={setUser} />}/>
+        <Route
+          path="/reviews/:reviewId"
+          element={<SingleReview user={user} setUser={setUser} />}
+        />
       </Routes>
     </div>
   );
