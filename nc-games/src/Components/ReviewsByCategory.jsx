@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import {Link, useParams} from "react-router-dom"
-import { getReviewsByCategory } from "../api"
+import { getReviews } from "../api"
 
 function ReviewsByCategory() {
     const [items, setItems] = useState([])
@@ -9,7 +9,7 @@ function ReviewsByCategory() {
 
     useEffect(() => {
         setIsLoading(true)
-        getReviewsByCategory(category).then(items => {
+        getReviews(category).then(items => {
             setItems(items)
             setIsLoading(false);
         })
@@ -17,6 +17,7 @@ function ReviewsByCategory() {
 
     return <main>
             {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
+                <Link className="Link" to="/">Back to all reviews</Link>
                 {items.map(review => {
                     return <li key={review.review_id}>
                         <div className="reviewList__Header">
