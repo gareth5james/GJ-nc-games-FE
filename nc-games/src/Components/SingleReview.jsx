@@ -3,15 +3,17 @@ import { getSingleReview } from "../api"
 import {Link, useParams} from "react-router-dom"
 import ReviewComments from "./ReviewComments"
 import ReviewVotes from "./ReviewVotes"
+import NewComment from "./NewComment"
 
-
-
-function SingleReview() {
+function SingleReview({user}) {
     const {reviewId} = useParams();
 
     const [review, setReview] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const [reviewDate, setReviewDate] = useState("")
+    const [hasPostedComment, setHasPostedComment] = useState(false)
+    const [numComments, setNumComments] = useState(0)
+    const [comments, setComments] = useState([])
 
     useEffect(() => {
         setIsLoading(true)
@@ -26,6 +28,10 @@ function SingleReview() {
         setReviewDate(newDate);
     }, [review.created_at])
 
+    useEffect(() => {
+        setNumComments(parseInt(review.comment_count));
+    }, [review.comment_count])
+
     return <main>
         {isLoading ? <p>Review Loading</p> : <div className="review">
                 <h2>{review.title}</h2>
@@ -35,8 +41,9 @@ function SingleReview() {
                 <img src={review.review_img_url} alt={review.title}/>
                 <p>{review.review_body}</p>
                 <ReviewVotes review={review}/>
-                <p>Comments: {review.comment_count}</p>
-                <ReviewComments reviewId={reviewId}/>
+                <NewComment reviewId={reviewId} hasPostedComment={hasPostedComment} setHasPostedComment={setHasPostedComment} setNumComments={setNumComments} setComments={setComments} user={user}/>
+                <p>Comments: {numComments}</p>
+                <ReviewComments reviewId={reviewId} hasPostedComment={hasPostedComment} setComments={setComments} comments={comments}/>
             <Link to="/">Back to Reviews</Link>
             </div>}
     </main>
