@@ -21,7 +21,7 @@ function ReviewsByCategory() {
                     return <li key={review.review_id}>
                         <div className="reviewList__Header">
                             <p>Title: {review.title}</p>
-                            <p>Category: {review.category.replaceAll("-", " ")}</p>
+                            <p className="reviewList__Header__Category">Category: {review.category.replaceAll("-", " ")}</p>
                             <p>Designer: {review.designer}</p>
                         </div>
                         <div className="reviewList__Body">
