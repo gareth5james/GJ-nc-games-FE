@@ -6,16 +6,21 @@ import {Link} from "react-router-dom"
 function Reviews({sortBy, setSortBy, orderBy, setOrderBy}) {
     const [items, setItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [serverError, setServerError] = useState(null)
 
     useEffect(() => {
+        setServerError(null)
         setIsLoading(true)
         getReviews(sortBy, orderBy).then(items => {
             setItems(items)
             setIsLoading(false);
+        }).catch(e => {
+            setServerError(`${e.response.status} ${e.response.statusText}`)
         })
     }, [sortBy, orderBy])
 
     return <main>
+            { serverError ? <p>{serverError}</p> : null}
             <SortBy className="sort" sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/>
             {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
                 {items.map(review => {

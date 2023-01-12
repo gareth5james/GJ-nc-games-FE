@@ -16,7 +16,7 @@ function NewComment({reviewId, hasPostedComment, setHasPostedComment, setNumComm
         setHasPostedComment(false);
         setHasPostedError(false);
         setIsPostingError(false);
-        if(!hasPosted && newComment.length !== 0 && user !== null) {
+        if(!hasPosted && newComment.length > 9 && user !== null) {
             setComments(curr => [newComment, ...curr])
             setNumComments((curr) => curr + 1)
             setHasPosted(true);
@@ -31,7 +31,7 @@ function NewComment({reviewId, hasPostedComment, setHasPostedComment, setNumComm
                 setNumComments((curr) => curr - 1)
             })
         } else {
-            if(newComment.length === 0) {
+            if(newComment.length < 10) {
                 setZeroLength(true); //error message displayed below if the newComment is empty
             } else if (user === null) {
                 setLoginError(true);
@@ -45,7 +45,7 @@ function NewComment({reviewId, hasPostedComment, setHasPostedComment, setNumComm
 
     return <form className="newComment" onSubmit={(event) => {handleSubmit(event)}} disabled={hasPosted}>
         {loginError ? <p className="errorMessage">You must be logged in to post</p> : null}
-        {zeroLength ? <p className="errorMessage">Please enter comment to be posted</p> : null }
+        {zeroLength ? <p className="errorMessage">Please enter comment to be posted, must be at least 10 characters</p> : null }
         {hasPostedComment ? <p className="successMessage">Comment Posted!</p> : null}
         {isPostingError ? <p className="errorMessage">Something went wrong, please try again</p> : null}
         {hasPostedError ? <p className="errorMessage">You have already posted, please wait</p> : null}

@@ -5,6 +5,7 @@ import Reviews from "./Components/Reviews";
 import SingleReview from "./Components/SingleReview";
 import ReviewsByCategory from "./Components/ReviewsByCategory";
 import Login from "./Components/Login";
+import NoPath from "./Components/NoPath";
 
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
@@ -46,6 +47,7 @@ function App() {
           path="/reviews/:reviewId"
           element={<SingleReview user={user} setUser={setUser} />}
         />
+        <Route path="/*" element={<NoPath />} />
       </Routes>
     </div>
   );
