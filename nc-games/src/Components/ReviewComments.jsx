@@ -15,7 +15,6 @@ function ReviewComments({reviewId, hasPostedComment, comments, setComments, user
     }, [reviewId, hasPostedComment])
 
     function delComm (commentId) {
-        console.log("hello")
         setHasDeleted(true);
         setComments((curr) => [...comments].filter(comment => comment.comment_id !== commentId))
         deleteComment(commentId).then(() => {}).catch(e => {
