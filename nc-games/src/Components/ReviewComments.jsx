@@ -32,6 +32,7 @@ function ReviewComments({reviewId, hasPostedComment, comments, setComments, user
                 <p>{comment.body}</p>
                 <p>By: {comment.author}</p>
                 <CommentVotes comment={comment}/>
+                {hasDeleted === false ? <p className="errorMessage">Something went wrong, please try again</p> : null}
                 {user === comment.author ? <button className="comments__Delete" onClick={() => {delComm(comment.comment_id)}}>Delete Comment</button> : null }
             </li>
         })}
