@@ -75,6 +75,11 @@ nav .Link {
   padding-left: 0;
 }
 
+.comments__Delete {
+  margin-bottom: 3px;
+  font-size: 0.9em;
+}
+
 #sort_by {
   margin-top: 10px;
 }
