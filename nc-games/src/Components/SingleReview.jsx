@@ -43,7 +43,7 @@ function SingleReview({user}) {
                 <ReviewVotes review={review}/>
                 <NewComment reviewId={reviewId} hasPostedComment={hasPostedComment} setHasPostedComment={setHasPostedComment} setNumComments={setNumComments} setComments={setComments} user={user}/>
                 <p>Comments: {numComments}</p>
-                <ReviewComments reviewId={reviewId} hasPostedComment={hasPostedComment} setComments={setComments} comments={comments} user={user}/>
+                <ReviewComments reviewId={reviewId} hasPostedComment={hasPostedComment} setHasPostedComment={setHasPostedComment} setComments={setComments} comments={comments} user={user}/>
             <Link to="/">Back to Reviews</Link>
             </div>}
     </main>

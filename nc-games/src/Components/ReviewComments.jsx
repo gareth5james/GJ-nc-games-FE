@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { getComments, deleteComment } from "../api"
 import CommentVotes from "../Components/CommentVotes"
 
-function ReviewComments({reviewId, hasPostedComment, comments, setComments, user}) {
+function ReviewComments({reviewId, hasPostedComment, comments, setComments, user, setHasPostedComment}) {
     const [isLoading, setIsLoading] = useState(true)
     const [hasDeleted, setHasDeleted] = useState(true)
     
@@ -16,7 +16,8 @@ function ReviewComments({reviewId, hasPostedComment, comments, setComments, user
 
     function delComm (commentId) {
         setHasDeleted(true);
-        setComments((curr) => [...comments].filter(comment => comment.comment_id !== commentId))
+        setHasPostedComment(false);
+        setComments((curr) => [...curr].filter(comment => comment.comment_id !== commentId))
         deleteComment(commentId).then(() => {}).catch(e => {
             setHasDeleted(false)
             getComments(reviewId).then(comments => {
