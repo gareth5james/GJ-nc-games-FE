@@ -28,7 +28,7 @@ function CommentVotes({comment}) {
     }
 
     return <div className="review__Votes">
-    {hasVotedError ? <p className="errorMessage">You can only vote on each review once</p> : null}
+    {hasVotedError ? <p className="errorMessage">You can only vote on each comment once</p> : null}
     {isVoteError ? <p className="errorMessage">Error updating votes</p> : null}
     <p>Votes: {votes}</p>
     <button type="button" onClick={() => {incVotes(1)}}>👍</button>
