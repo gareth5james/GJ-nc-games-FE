@@ -36,8 +36,9 @@ nav {
   background-color: #73648E;
   margin-top:0;
   margin-bottom: 0;
-  min-height: 5vh;
-  line-height: 5vh;
+  min-height: 30px;
+  line-height: 30px;
+  font-size: 1.2em;
 }
 
 .Link {
