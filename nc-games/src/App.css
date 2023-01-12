@@ -1,5 +1,5 @@
 body {
-  background-color: #6B9FC8;
+  background-color: #9FA1A7;
 }
 
 .App {
@@ -12,14 +12,18 @@ body {
 }
 
 .App-header {
-  background-color: #1C2235;
+  background-color: #556781;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #FBF9F9;
+  color: #F2F3F0;
   margin-bottom: 0;
+}
+
+.App-header__Link {
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 800px) {
@@ -33,7 +37,7 @@ body {
 nav {
   padding-top: 0;
   padding-bottom: 0;
-  background-color: #73648E;
+  background-color: #85858B;
   margin-top:0;
   margin-bottom: 0;
   min-height: 30px;
@@ -42,19 +46,19 @@ nav {
 }
 
 .Link {
-  color: #1C2235
+  color: #556781
 }
 
 nav .Link {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 1vw;
+  padding-right: 1vw;
   text-transform: uppercase;
-  color: #1C2235;
+  color: #556781;
 }
 
 .review {
-  background-color: #FBF9F9;
-  border: 3px solid #73648E;
+  background-color: #F2F3F0;
+  border: 3px solid #85858B;
   margin: 10px;
 }
 
@@ -90,13 +94,13 @@ nav .Link {
 }
 
 .comments li {
-  background-color: #FBF9F9;
-  border: 3px solid #73648E;
+  background-color: #F2F3F0;
+  border: 3px solid #85858B;
   margin: 10px;
 }
 
 button {
-  background-color: #6B9FC8;
+  background-color: #9FA1A7;
   margin-left: 2px;
   margin-right: 2px;
   margin-bottom: 5px;
@@ -107,7 +111,7 @@ button {
   float: right;
   margin-right: 20px;
   margin-top: 5px;
-  background-color: #FBF9F9;
+  background-color: #F2F3F0;
 }
 
 .reviewList {
@@ -116,15 +120,23 @@ button {
 }
 
 .reviewList li {
-  background-color: #FBF9F9;
-  border: 3px solid #73648E;
+  background-color: #F2F3F0;
+  border: 3px solid #85858B;
   margin: 10px;
 }
 
 .reviewList__Header {
-  border: 2px solid #73648E;
+  border: 2px solid #85858B;
   margin: 5px;
   height: auto;
+}
+
+.reviewList__Header__Title {
+  color: #556781
+}
+
+.review__Title {
+  color: #556781
 }
 
 .reviewList__Header__Category {
@@ -132,7 +144,7 @@ button {
 }
 
 .reviewList__Body {
-  border: 2px solid #73648E;
+  border: 2px solid #85858B;
   margin: 5px;
 }
 

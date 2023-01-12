@@ -26,7 +26,7 @@ function Reviews({sortBy, setSortBy, orderBy, setOrderBy}) {
                 {items.map(review => {
                     return <li key={review.review_id}>
                         <div className="reviewList__Header">
-                            <p>Title: {review.title}</p>
+                            <h2 className="reviewList__Header__Title">{review.title}</h2>
                             <p>Category: {review.category}</p>
                             <p>Designer: {review.designer} on: {new Date(review.created_at).toDateString()}</p>
                         </div>

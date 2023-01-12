@@ -46,7 +46,7 @@ function SingleReview({user}) {
         { serverError ? <p>{serverError}</p> : null}
         {badReview ? <p>No such review</p>  : isLoading ? <p>Review Loading</p>: 
             <div className="review">
-                <h2>{review.title}</h2>
+                <h2 className="review__Title">{review.title}</h2>
                 <p>Category: {review.category}</p>
                 <p>Designer: {review.designer}</p>
                 <p>Written: {reviewDate}</p>
