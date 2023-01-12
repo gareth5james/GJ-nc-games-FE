@@ -38,3 +38,9 @@ export const postComment = (user, reviewId, newComment) => {
     })
     .then((response) => response.data.comment);
 };
+
+export const patchCommentVotes = (commentId, incVotes) => {
+  return api
+    .patch(`/comments/${commentId}`, incVotes)
+    .then((response) => response.data.comment.votes);
+};
