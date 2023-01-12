@@ -4,7 +4,7 @@ import CommentVotes from "../Components/CommentVotes"
 
 function ReviewComments({reviewId, hasPostedComment, comments, setComments, user}) {
     const [isLoading, setIsLoading] = useState(true)
-    const [hasDeleted, setHasDeleted] = useState(false)
+    const [hasDeleted, setHasDeleted] = useState(true)
     
     useEffect(() => {
         setIsLoading(true)
