@@ -7,17 +7,21 @@ function ReviewsByCategory({sortBy, setSortBy, orderBy, setOrderBy}) {
     const [items, setItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const {category} = useParams()
+    const [badCategory, setBadCategory] = useState(false)
 
     useEffect(() => {
+        setBadCategory(false)
         setIsLoading(true)
         getReviews(sortBy, orderBy, category).then(items => {
             setItems(items)
             setIsLoading(false);
-        })
+        }).catch(e => {
+            setIsLoading(false)
+            setBadCategory(true)})
     }, [category, sortBy, orderBy])
 
     return <main>
-            <SortBy className="sort" sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/>
+            { badCategory ? <p>No such category</p> : <SortBy className="sort" sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/> }
             {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
                 <Link className="Link" to="/">Back to all reviews</Link>
                 {items.map(review => {

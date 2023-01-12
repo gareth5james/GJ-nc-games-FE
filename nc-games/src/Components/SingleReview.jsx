@@ -14,11 +14,16 @@ function SingleReview({user}) {
     const [hasPostedComment, setHasPostedComment] = useState(false)
     const [numComments, setNumComments] = useState(0)
     const [comments, setComments] = useState([])
+    const [badReview, setBadReview] = useState(false)
 
     useEffect(() => {
         setIsLoading(true)
+        setBadReview(false)
         getSingleReview(reviewId).then(response => {
             setReview(response)
+            setIsLoading(false)
+        }).catch(e => {
+            setBadReview(true)
             setIsLoading(false)
         })
     },[reviewId])
@@ -32,8 +37,10 @@ function SingleReview({user}) {
         setNumComments(parseInt(review.comment_count));
     }, [review.comment_count])
 
-    return <main>
-        {isLoading ? <p>Review Loading</p> : <div className="review">
+    return <main> 
+        {isLoading ? <p>Review Loading</p>: null}
+        {badReview ? <p>No such review</p>  :
+            <div className="review">
                 <h2>{review.title}</h2>
                 <p>Category: {review.category}</p>
                 <p>Designer: {review.designer}</p>
