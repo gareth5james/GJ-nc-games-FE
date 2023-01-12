@@ -44,3 +44,7 @@ export const patchCommentVotes = (commentId, incVotes) => {
     .patch(`/comments/${commentId}`, incVotes)
     .then((response) => response.data.comment.votes);
 };
+
+export const deleteComment = (commentId) => {
+  return api.delete(`comments/${commentId}`).then((response) => {});
+};
