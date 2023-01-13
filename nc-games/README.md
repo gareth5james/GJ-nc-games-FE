@@ -12,7 +12,9 @@ Using the links towards the top of the page will cause the display the reviews f
 
 Reviews can be sorted in ascending/descending order and by different criteria by using the drop down boxes just above the reviews.
 
-For demonstration purposes, a default user can log in with the "login" button. When logged in a message is displayed. Being logged in allows the user to post a new review, or comment/vote on existing reviews; and, to post comments, and vote on comments.
+Users can vote on reviews/comments.
+
+For demonstration purposes, a default user can log in with the "login" button. When logged in a message is displayed. Being logged in allows the user to post a new review, or comment on existing reviews; and, to post comments.
 
 Users can delete only their own comments, if they wish.
 
