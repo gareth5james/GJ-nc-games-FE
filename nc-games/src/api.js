@@ -48,3 +48,8 @@ export const patchCommentVotes = (commentId, incVotes) => {
 export const deleteComment = (commentId) => {
   return api.delete(`comments/${commentId}`).then((response) => {});
 };
+
+export const postReview = (newReview) => {
+  console.log(newReview);
+  return api.post(`/reviews`, newReview).then((response) => {});
+};

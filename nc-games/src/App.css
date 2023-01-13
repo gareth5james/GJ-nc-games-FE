@@ -38,15 +38,23 @@ nav {
   padding-top: 0;
   padding-bottom: 0;
   background-color: #85858B;
-  margin-top:0;
-  margin-bottom: 0;
+  margin-top:0px;
+  margin-bottom: 0px;
   min-height: 30px;
   line-height: 30px;
   font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .Link {
-  color: #556781
+  color: #556781;
+  background-color: #F2F3F0;
+  border: solid #556781 1px;
+  border-radius: 10px; 
+  margin: 2px;
 }
 
 nav .Link {
@@ -123,6 +131,26 @@ button {
   background-color: #F2F3F0;
   border: 3px solid #85858B;
   margin: 10px;
+}
+
+.newReview {
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #F2F3F0;
+  border: 3px solid #85858B;
+  margin: 10px;
+  display: grid
+}
+
+.newReview textarea {
+  resize: none;
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.newReview__Category {
+  margin-bottom: 10px;
 }
 
 .reviewList__Header {

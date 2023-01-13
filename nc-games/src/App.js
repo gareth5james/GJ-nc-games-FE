@@ -6,6 +6,7 @@ import SingleReview from "./Components/SingleReview";
 import ReviewsByCategory from "./Components/ReviewsByCategory";
 import Login from "./Components/Login";
 import NoPath from "./Components/NoPath";
+import AddReview from "./Components/AddReview";
 
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
@@ -14,13 +15,24 @@ function App() {
   const [user, setUser] = useState(null);
   const [sortBy, setSortBy] = useState(undefined);
   const [orderBy, setOrderBy] = useState("asc");
+  const [categories, setCategories] = useState([]);
 
   return (
     <div className="App">
       <Header />
-      <Nav />
+      <Nav user={user} categories={categories} setCategories={setCategories} />
       <Login user={user} setUser={setUser} />
       <Routes>
+        <Route
+          path="/add"
+          element={
+            <AddReview
+              user={user}
+              categories={categories}
+              setCategories={setCategories}
+            />
+          }
+        />
         <Route
           path="/"
           element={
@@ -29,6 +41,8 @@ function App() {
               setSortBy={setSortBy}
               orderBy={orderBy}
               setOrderBy={setOrderBy}
+              categories={categories}
+              setCategories={setCategories}
             />
           }
         />
