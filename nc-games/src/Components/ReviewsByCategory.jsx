@@ -31,7 +31,7 @@ function ReviewsByCategory({sortBy, setSortBy, orderBy, setOrderBy}) {
             { serverError ? <p>{serverError}</p> : null}
             { badCategory ? <p>No such category</p> : <SortBy className="sort" sortBy={sortBy} setSortBy={setSortBy} orderBy={orderBy} setOrderBy={setOrderBy}/> }
             {isLoading ? <p>Reviews Loading</p> :  <ul className="reviewList">
-                <Link className="Link" to="/">Back to all reviews</Link>
+                <Link className="Back" to="/">Back to all reviews</Link>
                 {items.map(review => {
                     return <li key={review.review_id}>
                         <div className="reviewList__Header">
