@@ -1,60 +1,53 @@
-# Northcoders Games
+# House of Games
 
-Northcoders Games is a social games content rating, and discussion website.
+House of Games provides a front-end to an earlier developed api, contaning a collection of reviews (of in this case board games) with associated comments.
 
-Northcoders Games has game reviews which are divided into categories. Each review has user curated ratings and can be up or down voted using the API. Users can also add comments about an review. Users can also add comments about a review.
+Hosted version: https://gjhouseofgames.netlify.app/
 
-This sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
+## Using the page
 
-## Kanban
+The home page shows a list of all of the reviews present in the database.
 
-### Link to your Trello Board here: https://trello.com/b/HDWmbjGM/fe-nc-games
+Using the links towards the top of the page will cause the display the reviews for that category of game only.
 
-To keep track of the tasks involved in this project we're going to use a kanban board. Ensure that you work on one _ticket_ at time. You can click on the ticket to find out more information about what is required for the feature. A ticket is not considered complete unless both the happy path and errors response are handled and there is a basic structure to your styling.
+Reviews can be sorted in ascending/descending order and by different criteria by using the drop down boxes just above the reviews.
 
-**We suggest you work through the tickets from top to bottom.**
+Users can vote on reviews/comments.
 
-## Available Functionality
+For demonstration purposes, a default user can log in with the "login" button. When logged in a message is displayed. Being logged in allows the user to post a new review, or comment on existing reviews; and, to post comments.
 
-You will only be able to complete front end tickets that have the associated behaviour implemented in your back end application. For example, you will be unable to complete front end _ticket 10: Sort reviews_ if you haven't completed back end _ticket 10: GET /api/reviews (queries)_.
-We suggest that you complete _all_ the core task tickets on your front end trello that you are able to at this stage. Once you have done this, you are welcome to return to your back end project one ticket at a time to allow you to continue with front end tickets.
+Users can delete only their own comments, if they wish.
 
-## Git Branching and Pull Requests
+## Back-end
 
-You will be working on each ticket on a new **branch**.
+House of Games is the front-end to https://github.com/gareth5james/GJ-nc-games
 
-To create and switch to a new git branch use the command:
+## Running locally for testing/development
 
-```
-git checkout -b <new branch name>
-```
+### Cloning
 
-This will create a branch and move over to that branch. (Omit the `-b` flag if you wish to switch to an already existing branch).
+- create a new local folder
 
-We recommend that you name the branch something that clearly shows the ticket you are working on. eg. `fe-ncnews-display-reviews`
+- fork on github and clone into your local folder
 
-When pushing the branch to git hub ensure that you make reference to the branch you are pushing to on the remote.
+> git clone your_forked_repo.git
 
-```
-git push origin <branch name>
-```
+### Dependencies
 
-From github you can make a pull request and share the link and ticket number on your `nchelp` with a zoom link for you to demo your feature. A tutor will swing by to review your code. Ensure that you keep your trello up to date whilst you await the PR approval.
+> npm install
 
-Once a pull request been accepted be sure to switch back to the main branch and pull down the updated changes.
+to install all dependencies.
 
-```
-git checkout main
+#### Minimum versions
 
-git pull origin main
-```
+- Node.js v18.12.1
 
-You can tidy up your local branches once they have been pull into main by deleting them:
+### Running
 
-```
-git branch -D <local branch>
-```
+> cd nc-games
 
-## Important
+to move into the project folder.
 
-This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :) <3
+> npm start
+
+to run a local view of the page at http://localhost:3000
